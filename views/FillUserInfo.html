@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FillUserInfo</title>
+</head>
+<body>
+    <p>注册成功！请继续填写补充相关信息，使你的帐号具备订场的效力</p>
+    <p>注意！填写的信息应与THUinfo上的记录一致，否则在订场时将出现错误</p>
+    <form action = "/AddComplete" method = "post">
+        学生证号：<input type="text" name="studentId"><br>
+        info密码: <input type="password" name="infoPassword"><br>
+        姓名: <input type="text" name="realName"><br>
+        手机: <input type="text" name="phone"><br>
+        <input type="submit" value="提交">
+    </form>
+</body>
+</html>

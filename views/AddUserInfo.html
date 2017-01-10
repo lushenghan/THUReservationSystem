@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AddUserInfo</title>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>  <!--使用百度CDN引用JQuery-->
+    <script>
+        $(document).ready(function(){   //防止在文档完全加载完毕之前执行JQuery代码
+            $("#check").click(function(){
+                var checkSuccess = 0;
+                if ($("#username").val() == []){
+                    alert("用户名不能为空，请重试！");
+                    checkSuccess = 0;
+                }else{
+                    checkSuccess++;   //checkSuccess为通过验证的指示标
+                }
+
+                if ($("#password").val() == []){
+                    alert("密码不能为空，请重试！");
+                    checkSuccess = 0;
+                }else{
+                    checkSuccess++;
+                }
+
+                if (($("#password")).val() !== ($("#passwordRepeat")).val()){
+                    alert("两次输入的密码不一致，请重试！");
+                    checkSuccess = 0;
+                }else{
+                    checkSuccess++;
+                }
+
+                if (checkSuccess == 3){
+                    alert("初步验证通过，单击注册按钮检查用户名是否与已有记录冲突，若无冲突则可继续完善个人信息（请不要在此时修改注册信息，以免发生错误）");
+                    document.getElementById("send").style.visibility = "visible";
+                    document.getElementById("username").style.visibility = "hidden";
+                    document.getElementById("password").style.visibility = "hidden";
+                    document.getElementById("passwordRepeat").style.visibility = "hidden";
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+<p>被神和羽毛球选择的孩子，快来注册吧</p>
+<form action = "/FillUserInfo" method = "post">
+    登录本系统的用户名: <input id="username" type="text" name="username"><br>
+    登录本系统的密码: <input id="password" type="password" name="password"><br>
+    再次输入密码: <input id="passwordRepeat" type="password" name="passwordRepeat"><br>
+    <input id="send" type="submit" value="注册（为保护您的注册信息，相关输入项已隐藏）" style="visibility:hidden">
+</form>
+<button id="check">验证注册信息</button>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ShowUserInfo</title>
+</head>
+<body>
+    <!--document.write("Hello World!");-->
+    <p>在此查看已注册的用户信息</p>
+    <!--<button id="check">确认查看</button>-->
+    <!--<p id="username"></p>-->
+    <ul>
+        <%- partial("existUser",existUsers)%>
+    </ul>
+    <a href="./Logout">注销</a>
+    <!-- <button id="add" href="./AddUserInfo" style="visibility:hidden">增加新用户</button> -->
+</body>
+</html>
